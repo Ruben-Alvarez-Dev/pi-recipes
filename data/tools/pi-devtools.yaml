@@ -1,0 +1,33 @@
+id: pi-devtools
+name: Pi DevTools
+npm: "@feniix/pi-devtools"
+category: infrastructure
+description: Developer workflow automation for Pi — branch and PR management, release automation, PR feedback resolution, merge commands, with GitHub and Linear tracker integration.
+capabilities:
+  - branch-management
+  - pr-workflow
+  - release-automation
+  - pr-feedback-resolution
+  - merge-commands
+  - github-integration
+  - linear-tracker-integration
+ideal_use_cases:
+  - scenario: Managing a multi-branch PR workflow with Linear tracking
+    why: Integrates GitHub PRs with Linear issues — branch, create PR, resolve feedback, merge
+    model_hint: mimo-v2.5-pro
+  - scenario: Automating release processes with version bumping
+    why: Release automation handles versioning, changelogs, and publishing steps
+  - scenario: Resolving PR review comments systematically
+    why: PR feedback resolution feature addresses each review comment methodically
+anti_patterns:
+  - scenario: Git operations on a repo without GitHub remote
+    why: Heavily GitHub-dependent — no GitLab or Bitbucket support
+    alternative: manual-git-commands
+  - scenario: Projects that don't use Linear for issue tracking
+    why: Linear integration is a core feature — useless without it
+    alternative: pi-gitnexus
+dependencies:
+  - pi-toolchain
+thinking_level: medium
+notes: GitHub integration requires auth.json credentials. Linear integration requires workspace API key. Release automation depends on project having correct package.json versioning.
+version: "latest"

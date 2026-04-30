@@ -1,0 +1,31 @@
+id: fenix-code-reasoning
+name: Code Reasoning (Fenix)
+npm: "@feniix/pi-code-reasoning"
+category: thinking
+description: Reflective problem-solving through sequential thinking with branching and revision support — designed specifically for code-related reasoning with the ability to explore multiple solution paths.
+capabilities:
+  - reflective-reasoning
+  - branching-analysis
+  - revision-support
+  - code-focused-thinking
+  - multi-path-exploration
+ideal_use_cases:
+  - scenario: Evaluating different algorithmic approaches with trade-off analysis
+    why: Branching support lets you explore multiple paths without committing to one prematurely
+    model_hint: mimo-v2.5-pro
+    recipe_hint: algorithm-selection
+  - scenario: Refactoring code with multiple valid strategies
+    why: Revision support allows backing up and trying a different approach when one doesn't pan out
+  - scenario: Complex bug investigation requiring hypothesis exploration
+    why: Branch and revise pattern mirrors scientific method — propose, test, revise
+anti_patterns:
+  - scenario: Simple code changes with obvious solutions
+    why: The branching and revision overhead is unnecessary when the path forward is clear
+    alternative: direct-implementation
+  - scenario: Non-code reasoning tasks (planning, documentation)
+    why: Specifically designed for code-related reasoning — not general-purpose thinking
+    alternative: pi-sequential-thinking
+dependencies: []
+thinking_level: high
+notes: Complements pi-sequential-thinking — use sequential-thinking for general analysis, code-reasoning for code-specific branching logic. The "branch and revise" pattern is unique to this tool.
+version: "latest"

@@ -1,0 +1,31 @@
+id: pi-guardrails
+name: Pi Guardrails
+npm: "@aliou/pi-guardrails"
+category: security
+description: Permission gates and safety guardrails for Pi — controls what commands and file operations the agent can perform, protecting against unintended destructive actions.
+capabilities:
+  - permission-gating
+  - command-blocking
+  - file-protection
+  - safety-rails
+  - env-protection
+ideal_use_cases:
+  - scenario: Preventing the agent from running destructive commands accidentally
+    why: Permission gates require explicit approval before dangerous operations
+    model_hint: mimo-v2.5-pro
+    recipe_hint: safe-refactor
+  - scenario: Protecting sensitive files from modification
+    why: File protection prevents accidental edits to configuration and credential files
+  - scenario: Running the agent in production-like environments safely
+    why: Guardrails provide a safety net against unintended changes
+anti_patterns:
+  - scenario: Sandboxed development environments where nothing is at risk
+    why: Guardrails add friction in environments where mistakes are harmless
+    alternative: unrestricted-mode
+  - scenario: Highly automated workflows where permission prompts slow everything down
+    why: Every guarded action requires approval — can bottleneck fast iteration
+    alternative: pi-toolchain-rewrite-mode
+dependencies: []
+thinking_level: low
+notes: Runs FIRST in Pi's hook chain — before toolchain rewrites. Some features have been migrated to pi-toolchain (preventBrew, enforcePackageManager). Check for deprecated features.
+version: "latest"

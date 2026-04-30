@@ -1,0 +1,30 @@
+id: pi-show-diffs
+name: Pi Show Diffs
+npm: "pi-show-diffs"
+category: quality
+description: Diff approval viewer — shows file changes before edit and write tools modify files, requiring explicit approval for each change.
+capabilities:
+  - diff-preview
+  - change-approval
+  - pre-edit-review
+  - change-control
+ideal_use_cases:
+  - scenario: Reviewing agent's code changes before they're applied
+    why: See the exact diff and approve or reject before any file is modified
+    model_hint: mimo-v2.5-pro
+    recipe_hint: safe-refactor
+  - scenario: Safe refactoring where every change must be reviewed
+    why: No change happens without explicit approval — prevents surprise modifications
+  - scenario: Teaching the agent by reviewing and correcting its proposed changes
+    why: Diff preview lets you see what the agent intends to do and course-correct before execution
+anti_patterns:
+  - scenario: Trusted agents making routine changes
+    why: Approval workflow slows down routine operations that don't need review
+    alternative: unrestricted-edits
+  - scenario: High-velocity iterations where review is a bottleneck
+    why: Every edit requires approval — can significantly slow development pace
+    alternative: batch-approval
+dependencies: []
+thinking_level: low
+notes: Essential for safe refactoring recipes. Each change is shown as a diff before application.
+version: "latest"

@@ -1,0 +1,30 @@
+id: ask-user-question
+name: Ask User Question
+npm: "@juicesharp/rpiv-ask-user-question"
+category: communication
+description: Lets the agent ask clarifying questions with structured options instead of guessing — provides multiple-choice and open-ended question tools for user interaction.
+capabilities:
+  - structured-questions
+  - multiple-choice
+  - clarification-requests
+  - user-interaction
+  - option-selection
+ideal_use_cases:
+  - scenario: Agent needs to choose between multiple implementation approaches
+    why: Structured options prevent the agent from guessing — user makes the decision
+    model_hint: mimo-v2.5-pro
+  - scenario: Gathering requirements when the task description is ambiguous
+    why: Clarification questions resolve ambiguity before implementation begins
+  - scenario: Interactive configuration workflows
+    why: Multiple-choice questions guide the user through configuration steps
+anti_patterns:
+  - scenario: Tasks with clear, unambiguous requirements
+    why: Questions add friction when the path forward is obvious
+    alternative: direct-implementation
+  - scenario: Automated or non-interactive environments
+    why: Requires user input — cannot work in headless or CI environments
+    alternative: default-configuration
+dependencies: []
+thinking_level: low
+notes: Simple but effective — prevents the agent from making wrong assumptions. Essential for any interactive recipe that needs user decisions.
+version: "latest"

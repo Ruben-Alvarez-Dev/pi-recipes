@@ -1,0 +1,30 @@
+id: pi-task
+name: Pi Task
+npm: "@0xkobold/pi-task"
+category: planning
+description: Kanban-style task management for Pi agents — backlog, in-progress, review, blocked, and done columns with SQLite persistence.
+capabilities:
+  - kanban-management
+  - task-tracking
+  - sqlite-persistence
+  - status-columns
+  - task-lifecycle
+ideal_use_cases:
+  - scenario: Managing a backlog of improvements and features for a project
+    why: Kanban columns provide clear visual organization with persistent storage
+    model_hint: mimo-v2.5-pro
+  - scenario: Tracking agent progress across a multi-session development effort
+    why: SQLite persistence means tasks survive restarts and session changes
+  - scenario: Blocking tasks with dependencies on other work
+    why: Dedicated "blocked" column highlights dependencies
+anti_patterns:
+  - scenario: Projects already using Jira, Linear, or GitHub Projects
+    why: Adds a separate tracking system that duplicates existing project management
+    alternative: pi-devtools
+  - scenario: Tasks that change state multiple times per minute
+    why: Kanban is for tracking progress, not real-time state machines
+    alternative: in-memory-tracking
+dependencies: []
+thinking_level: low
+notes: "SQLite backend ensures durability. Column model: backlog -> in-progress -> review -> blocked -> done."
+version: "latest"

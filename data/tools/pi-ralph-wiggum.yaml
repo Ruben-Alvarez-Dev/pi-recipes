@@ -1,0 +1,30 @@
+id: pi-ralph-wiggum
+name: Ralph Wiggum
+npm: "@tmustier/pi-ralph-wiggum"
+category: orchestration
+description: Long-running agent loops for iterative development in Pi — enables the agent to work in persistent loops with convergence detection and self-correction.
+capabilities:
+  - iterative-loops
+  - convergence-detection
+  - self-correction
+  - long-running-tasks
+  - persistent-workflow
+ideal_use_cases:
+  - scenario: Iterative refactoring with converge detection
+    why: The agent keeps improving until no more changes are needed — stops automatically
+    model_hint: mimo-v2.5-pro
+  - scenario: Running test-fix cycles until all tests pass
+    why: Loop continues fixing failures until convergence — hands-off testing
+  - scenario: Progressive code improvement with review cycles
+    why: Each iteration improves the code — convergence ensures it doesn't loop forever
+anti_patterns:
+  - scenario: Tasks with a fixed, known number of steps
+    why: Loop infrastructure is overkill for deterministic workflows
+    alternative: pi-boomerang
+  - scenario: Tasks where iteration might make things worse
+    why: Self-correction may not catch all regressions — risky for fragile systems
+    alternative: manual-iteration
+dependencies: []
+thinking_level: medium
+notes: Named after the Simpsons character known for doing things "the wrong way." Ironically, this tool helps the agent do things the RIGHT way through iterative improvement.
+version: "latest"

@@ -1,0 +1,28 @@
+id: pi-gateway
+name: Pi Gateway
+npm: "@0xkobold/pi-gateway"
+category: communication
+description: Hermes-style messaging gateway for Pi — multi-platform agent with sessions, security, and background task support for cross-platform communication.
+capabilities:
+  - multi-platform-messaging
+  - session-management
+  - security-layer
+  - background-tasks
+  - hermes-architecture
+ideal_use_cases:
+  - scenario: Running the agent across multiple communication platforms simultaneously
+    why: Unified gateway handles routing between platforms — one agent, many channels
+    model_hint: mimo-v2.5-pro
+  - scenario: Secure agent communication with encrypted sessions
+    why: Built-in security layer protects communication channels
+anti_patterns:
+  - scenario: Single-platform usage (terminal only)
+    why: Gateway adds complexity when only one communication channel is needed
+    alternative: direct-terminal
+  - scenario: Projects not requiring external communication
+    why: Messaging gateway is unnecessary when all work happens in Pi's TUI
+    alternative: none-needed
+dependencies: []
+thinking_level: low
+notes: Part of @0xkobold ecosystem. Inspired by Hermes messenger architecture. Supports background task execution alongside messaging.
+version: "latest"

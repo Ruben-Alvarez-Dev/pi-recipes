@@ -1,0 +1,28 @@
+id: cleo-os
+name: CleoOS
+npm: "@cleocode/cleo-os"
+category: infrastructure
+description: Batteries-included agentic development environment wrapping Pi — provides a complete development OS with preconfigured tools, workflows, and environment management.
+capabilities:
+  - development-environment
+  - tool-bundling
+  - workflow-preconfiguration
+  - environment-management
+  - batteries-included
+ideal_use_cases:
+  - scenario: Setting up a new development machine with a complete agent environment
+    why: Everything preconfigured — no manual setup needed for Pi and its extensions
+    model_hint: mimo-v2.5-pro
+  - scenario: Standardizing development environments across a team
+    why: Consistent environment ensures all team members have the same tools and configuration
+anti_patterns:
+  - scenario: Existing Pi setups with custom configurations
+    why: CleoOS may conflict with existing Pi configurations and extensions
+    alternative: manual-setup
+  - scenario: Environments with specific tool requirements not included in CleoOS
+    why: Bundled approach means you get what CleoOS provides — no customization
+    alternative: selective-extension-install
+dependencies: []
+thinking_level: low
+notes: Requires Node ≥24 — currently installed but will fail on Node 22. Will need Node upgrade before use. "Batteries-included" means it bundles its own versions of many tools.
+version: "latest"

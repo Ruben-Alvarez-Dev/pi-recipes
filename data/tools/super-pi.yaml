@@ -1,0 +1,30 @@
+id: super-pi
+name: Super Pi
+npm: "@leing2021/super-pi"
+category: orchestration
+description: Pi-native compound engineering package for iterative development workflows — provides structured multi-step execution with planning, implementation, and review phases.
+capabilities:
+  - compound-engineering
+  - multi-phase-workflow
+  - iterative-development
+  - phase-management
+  - pi-native-orchestration
+ideal_use_cases:
+  - scenario: Complex feature development requiring plan-implement-review cycles
+    why: Structured phases ensure no step is skipped — planning before implementation, review after
+    model_hint: mimo-v2.5-pro
+  - scenario: Large refactoring tasks that need to be broken into phases
+    why: Phase management keeps the agent focused on one aspect at a time
+  - scenario: Teaching the agent a development methodology
+    why: Built-in phases model real software engineering workflows
+anti_patterns:
+  - scenario: Quick fixes and small changes
+    why: Phase-based workflow is overkill for changes that take less than 5 minutes
+    alternative: direct-implementation
+  - scenario: Projects with their own established development process
+    why: Super Pi imposes its own workflow — may conflict with team conventions
+    alternative: custom-workflow
+dependencies: []
+thinking_level: medium
+notes: Pi-native — designed specifically for Pi's architecture, not ported from Claude Code or Codex. Combines well with babysitter-pi for autonomous operation.
+version: "latest"

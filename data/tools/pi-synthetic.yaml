@@ -1,0 +1,31 @@
+id: pi-synthetic
+name: Pi Synthetic
+npm: "@aliou/pi-synthetic"
+category: meta
+description: Synthetic API provider and web search tool for Pi — adds the Synthetic model provider with reasoning level mapping, web search, quota tracking, and usage warnings.
+capabilities:
+  - synthetic-provider
+  - web-search
+  - quota-tracking
+  - reasoning-level-mapping
+  - usage-warnings
+  - status-bar-integration
+ideal_use_cases:
+  - scenario: Using Synthetic's models as an alternative to primary provider
+    why: Adds Synthetic as a Pi provider with automatic reasoning level clamping
+    model_hint: mimo-v2.5-pro
+  - scenario: Web search for finding current information during coding
+    why: Zero-data-retention web search tool with API key auth
+  - scenario: Monitoring API usage to avoid quota exhaustion
+    why: Status bar shows live quota usage — warnings fire before hitting limits
+anti_patterns:
+  - scenario: Users without a Synthetic API account
+    why: Requires a Synthetic API key — the provider and web search tools fail without credentials
+    alternative: primary-provider-only
+  - scenario: Offline development environments
+    why: Web search requires internet connectivity
+    alternative: local-docs-only
+dependencies: []
+thinking_level: low
+notes: Reasoning levels are clamped to Synthetic's supported set (low, medium, high). Web search is always visible but fails gracefully without credentials. Quota warnings use severity transitions to avoid alert fatigue.
+version: "latest"

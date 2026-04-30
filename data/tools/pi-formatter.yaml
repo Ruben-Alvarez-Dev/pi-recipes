@@ -1,0 +1,29 @@
+id: pi-formatter
+name: Pi Formatter
+npm: "pi-formatter"
+category: quality
+description: Auto-formatting extension for Pi — automatically formats files after edits using project-configured formatters (Prettier, Biome, gofmt, etc.).
+capabilities:
+  - auto-formatting
+  - multi-language-support
+  - project-config-detection
+  - post-edit-formatting
+ideal_use_cases:
+  - scenario: Keeping code formatted after every edit without manual intervention
+    why: Runs formatters automatically after file modifications — no need to remember to format
+    model_hint: mimo-v2.5-pro
+  - scenario: Projects with Prettier or Biome configuration
+    why: Detects and respects project-level formatter configuration
+  - scenario: Multi-language projects needing consistent formatting
+    why: Supports multiple formatters based on file type
+anti_patterns:
+  - scenario: Projects without any formatter configuration
+    why: Has nothing to format with — falls back silently or uses defaults that may not match team style
+    alternative: manual-formatting
+  - scenario: Files that should NOT be auto-formatted (generated code, vendored files)
+    why: May format files that should remain untouched
+    alternative: manual-formatting-with-excludes
+dependencies: []
+thinking_level: low
+notes: Requires formatter binaries to be installed. Respects .prettierrc, biome.json, and similar config files.
+version: "latest"

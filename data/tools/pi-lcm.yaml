@@ -1,0 +1,30 @@
+id: pi-lcm
+name: Pi LCM
+npm: "pi-lcm"
+category: memory
+description: Lossless Context Management for Pi — DAG-based summarization with full history recovery. Compresses conversation context without losing information, enabling much longer effective conversations.
+capabilities:
+  - dag-summarization
+  - lossless-compression
+  - history-recovery
+  - context-management
+  - conversation-extension
+ideal_use_cases:
+  - scenario: Extremely long development sessions that would normally exhaust context
+    why: DAG-based compression extends effective conversation length without losing detail
+    model_hint: mimo-v2.5-pro
+  - scenario: Recovering specific details from earlier in a long conversation
+    why: Full history recovery means no information is truly lost — just compressed
+  - scenario: Multi-day projects with continuity across sessions
+    why: Combined with pi-session-recall, provides seamless long-term context
+anti_patterns:
+  - scenario: Short conversations that don't approach context limits
+    why: Compression is unnecessary when context is not a constraint
+    alternative: none-needed
+  - scenario: Tasks requiring verbatim preservation of all previous turns
+    why: Summarization by definition loses some detail — "lossless" refers to recoverability, not verbatim preservation
+    alternative: full-context-retention
+dependencies: []
+thinking_level: low
+notes: "'Lossless' means information is recoverable through the DAG structure, not that it's preserved verbatim. Critical tool for the 53-extension setup where context is precious."
+version: "latest"

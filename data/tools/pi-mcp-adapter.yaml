@@ -1,0 +1,30 @@
+id: pi-mcp-adapter
+name: Pi MCP Adapter
+npm: "pi-mcp-adapter"
+category: infrastructure
+description: MCP (Model Context Protocol) adapter for Pi — enables Pi to communicate with MCP servers for extended tool and resource capabilities.
+capabilities:
+  - mcp-protocol
+  - server-communication
+  - tool-extension
+  - resource-access
+  - protocol-bridging
+ideal_use_cases:
+  - scenario: Connecting Pi to an MCP server for additional tools
+    why: MCP protocol enables access to tools that Pi doesn't have natively
+    model_hint: mimo-v2.5-pro
+  - scenario: Using MCP resources (databases, APIs, file systems) from within Pi
+    why: MCP resources provide structured access to external systems
+  - scenario: Building a custom tool ecosystem via MCP servers
+    why: MCP is a standard protocol — build once, use across any MCP-compatible agent
+anti_patterns:
+  - scenario: Tasks that Pi's native tools handle perfectly
+    why: MCP adds latency and complexity when native tools suffice
+    alternative: native-pi-tools
+  - scenario: Environments where MCP servers are not available
+    why: Requires running MCP server processes — adds infrastructure dependency
+    alternative: standalone-tools
+dependencies: []
+thinking_level: low
+notes: Pi has its own MCP support built-in. This adapter may be for specific MCP features not yet in core Pi. Check Pi's native MCP support first before using this adapter.
+version: "latest"

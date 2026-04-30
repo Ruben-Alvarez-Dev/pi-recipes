@@ -1,0 +1,31 @@
+id: pi-mermaid
+name: Pi Mermaid
+npm: "pi-mermaid"
+category: documentation
+description: Renders Mermaid diagrams as ASCII directly in Pi's TUI — create flowcharts, sequence diagrams, ER diagrams, and more without leaving the terminal.
+capabilities:
+  - ascii-diagram-rendering
+  - mermaid-syntax
+  - flowchart-support
+  - sequence-diagram-support
+  - tui-integration
+ideal_use_cases:
+  - scenario: Visualizing architecture during a planning discussion
+    why: ASCII rendering in TUI means no context switching to a browser
+    model_hint: mimo-v2.5-pro
+    recipe_hint: architecture-review
+  - scenario: Creating sequence diagrams for API design reviews
+    why: Mermaid sequence diagrams render directly — perfect for discussing API flows
+  - scenario: Documenting system architecture in a codebase
+    why: Mermaid syntax is version-control friendly — plain text that renders to diagrams
+anti_patterns:
+  - scenario: Complex diagrams with many nodes and edges
+    why: ASCII rendering has limitations — complex diagrams become unreadable in terminal
+    alternative: browser-mermaid
+  - scenario: Exporting diagrams as images for presentations
+    why: TUI-only rendering — no image export
+    alternative: mermaid-cli
+dependencies: []
+thinking_level: low
+notes: ASCII art quality depends on terminal width. Works best for moderate complexity diagrams. Supports most Mermaid diagram types.
+version: "latest"

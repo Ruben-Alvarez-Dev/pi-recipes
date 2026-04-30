@@ -1,0 +1,35 @@
+id: pi-kobold
+name: Pi Kobold
+npm: "@0xkobold/pi-kobold"
+category: meta
+description: Meta-extension bundling the @0xkobold ecosystem — includes pi-orchestration, pi-gateway, pi-ollama, pi-learn, pi-persona, and development tools in one package.
+capabilities:
+  - ecosystem-bundling
+  - orchestration
+  - gateway
+  - ollama
+  - learn
+  - persona
+  - dev-tools
+ideal_use_cases:
+  - scenario: Quick setup of the complete @0xkobold ecosystem
+    why: One install gives you orchestration, gateway, local models, memory, and personas
+    model_hint: mimo-v2.5-pro
+  - scenario: Projects that benefit from the integrated kobold workflow
+    why: All kobold tools are designed to work together — seamless integration
+anti_patterns:
+  - scenario: Only needing one or two kobold tools
+    why: Meta-extension installs everything — wasteful if you only need one component
+    alternative: individual-install
+  - scenario: Projects with conflicting extension requirements
+    why: Bundled approach may include tools that conflict with your existing setup
+    alternative: selective-install
+dependencies:
+  - pi-orchestration
+  - pi-gateway
+  - pi-ollama
+  - pi-learn
+  - pi-persona
+thinking_level: low
+notes: Meta-package — all tools are also available individually. If you install pi-kobold AND individual kobold tools, you may get duplicate registrations. Use EITHER the meta-package OR individual installs, not both.
+version: "latest"

@@ -1,0 +1,31 @@
+id: pi-boomerang
+name: Pi Boomerang
+npm: "pi-boomerang"
+category: orchestration
+description: Token-efficient autonomous task execution with context collapse — chains prompt templates into multi-step workflows that collapse their execution context back to the branch point with summaries.
+capabilities:
+  - context-collapse
+  - chain-execution
+  - token-efficiency
+  - multi-step-workflow
+  - boomerang-callback
+ideal_use_cases:
+  - scenario: Running multi-step workflows without exhausting context window
+    why: Context collapse after each step keeps token usage manageable across long chains
+    model_hint: mimo-v2.5-pro
+  - scenario: Review cycles that need to feed back into the main conversation
+    why: Boomerang returns to the branch point with a summary — perfect for iterative review
+    recipe_hint: design-pattern-eval
+  - scenario: Chaining /scout → /planner → /impl templates for structured development
+    why: Native chain syntax (boomerang /a /b /c) orchestrates templates seamlessly
+anti_patterns:
+  - scenario: Tasks requiring full conversation history at every step
+    why: Context collapse loses detail — if you need full history, don't collapse
+    alternative: pi-subagents
+  - scenario: Single-step tasks with no chaining needed
+    why: Boomerang adds overhead for workflows with only one step
+    alternative: direct-prompt-template
+dependencies: []
+thinking_level: medium
+notes: Key mechanism for the recipe system — recipes use boomerang to chain steps without memory bloat. Works with pi-prompt-template-model for chain templates.
+version: "latest"

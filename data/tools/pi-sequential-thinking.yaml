@@ -1,0 +1,31 @@
+id: pi-sequential-thinking
+name: Sequential Thinking
+npm: "@feniix/pi-sequential-thinking"
+category: thinking
+description: Structured progressive thinking through defined stages — provides process_thought, record_thought, and reflect tools for multi-step reasoning with session management.
+capabilities:
+  - sequential-reasoning
+  - thought-recording
+  - reflection
+  - thinking-session-management
+  - step-by-step-analysis
+ideal_use_cases:
+  - scenario: Breaking down complex architectural decisions into sequential evaluation steps
+    why: Provides structured stage-by-stage analysis with reflection on reasoning quality
+    model_hint: mimo-v2.5-pro
+    recipe_hint: sequential-analysis
+  - scenario: Evaluating multiple design alternatives with weighted scoring
+    why: Supports recording thoughts at each step with confidence levels
+  - scenario: Debugging complex multi-system issues requiring methodical elimination
+    why: Sequential approach prevents jumping to conclusions — each hypothesis is tested methodically
+anti_patterns:
+  - scenario: Quick factual questions with definitive answers
+    why: Overhead of sequential steps is wasteful for simple queries that need immediate responses
+    alternative: direct-query
+  - scenario: Creative brainstorming requiring free-form ideation
+    why: Sequential thinking is too rigid for divergent creative exploration
+    alternative: pi-code-reasoning
+dependencies: []
+thinking_level: high
+notes: "Core reasoning tool — should be the foundation of any analysis chain. Supports thinking styles: analytical, creative, critical, systems. Sessions are independent and can be resumed."
+version: "latest"

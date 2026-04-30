@@ -1,0 +1,29 @@
+id: pi-structured-return
+name: Pi Structured Return
+npm: "@robhowley/pi-structured-return"
+category: quality
+description: Transforms noisy CLI output into compact structured results with fewer tokens — full logs are preserved for detailed inspection when needed.
+capabilities:
+  - output-structuring
+  - token-reduction
+  - log-preservation
+  - noise-filtering
+ideal_use_cases:
+  - scenario: Running verbose CLI tools where only the result matters
+    why: Strips noise and presents structured results — saves tokens in the conversation
+    model_hint: mimo-v2.5-pro
+  - scenario: Long-running build outputs where you need a summary
+    why: Compresses build logs into actionable structured output
+  - scenario: Debugging where you need both summary and detailed logs
+    why: Full logs are preserved — you get the summary first, details on demand
+anti_patterns:
+  - scenario: Commands with already minimal output
+    why: Adding structure to already-compact output adds unnecessary overhead
+    alternative: direct-output
+  - scenario: Interactive CLI tools requiring real-time streaming
+    why: Designed for batch command output — not for interactive terminal sessions
+    alternative: pi-processes
+dependencies: []
+thinking_level: low
+notes: Works as a post-processing layer on command output. Does not modify the actual command execution.
+version: "latest"

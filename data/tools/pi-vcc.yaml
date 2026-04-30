@@ -1,0 +1,30 @@
+id: pi-vcc
+name: Pi VCC
+npm: "@sting8k/pi-vcc"
+category: memory
+description: Algorithmic conversation compactor for Pi — produces transcript-preserving structured summaries without LLM calls, using pure algorithmic compression.
+capabilities:
+  - algorithmic-compression
+  - conversation-summarization
+  - transcript-preservation
+  - no-llm-required
+  - structured-summaries
+ideal_use_cases:
+  - scenario: Compressing a long conversation without spending tokens on LLM summarization
+    why: Pure algorithmic approach — no LLM call needed, saving tokens and cost
+    model_hint: mimo-v2.5-pro
+  - scenario: Preserving the structure of a conversation while reducing its size
+    why: Transcript-preserving means the summary maintains the conversation's logical flow
+  - scenario: Environments where LLM calls are expensive or rate-limited
+    why: Zero LLM calls means zero cost for compression
+anti_patterns:
+  - scenario: Conversations requiring nuanced semantic understanding for summarization
+    why: Algorithmic compression lacks the semantic understanding of LLM-based summarization
+    alternative: pi-lcm
+  - scenario: Very short conversations not needing compression
+    why: Compression is unnecessary when context is not constrained
+    alternative: none-needed
+dependencies: []
+thinking_level: low
+notes: Complements pi-lcm — VCC is algorithmic (fast, free, less nuanced), LCM is DAG-based (slower, more nuanced). Use VCC first, fall back to LCM when quality matters.
+version: "latest"

@@ -1,0 +1,30 @@
+id: pi-learn
+name: Pi Learn
+npm: "@0xkobold/pi-learn"
+category: memory
+description: Open-source memory infrastructure for Pi agents inspired by Honcho — provides peer representations, reasoning, and context assembly for stateful AI agents.
+capabilities:
+  - peer-representations
+  - reasoning-infrastructure
+  - context-assembly
+  - stateful-agent-support
+  - memory-infrastructure
+ideal_use_cases:
+  - scenario: Building agents that maintain long-term relationships with users
+    why: Peer representations capture user preferences and interaction patterns over time
+    model_hint: mimo-v2.5-pro
+  - scenario: Multi-session projects requiring accumulated context
+    why: Context assembly combines memories from multiple sessions into a coherent picture
+  - scenario: Agents that need to reason about their own past behavior
+    why: Self-reasoning capabilities let the agent reflect on and learn from past interactions
+anti_patterns:
+  - scenario: Short, one-off interactions with no continuity needed
+    why: Memory infrastructure adds overhead for sessions that don't benefit from persistence
+    alternative: stateless-interaction
+  - scenario: Projects requiring encrypted or compliance-grade memory storage
+    why: Uses standard storage without encryption — not suitable for sensitive data
+    alternative: pi-memory
+dependencies: []
+thinking_level: medium
+notes: Inspired by Honcho's memory architecture. Works as infrastructure that other tools can build on. Part of the @0xkobold ecosystem.
+version: "latest"

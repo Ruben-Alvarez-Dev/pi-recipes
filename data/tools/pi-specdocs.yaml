@@ -1,0 +1,32 @@
+id: pi-specdocs
+name: Pi SpecDocs
+npm: "@feniix/pi-specdocs"
+category: documentation
+description: Structured specification documentation — PRDs, ADRs, and implementation plans with cross-referencing and template-based generation.
+capabilities:
+  - prd-generation
+  - adr-generation
+  - implementation-plans
+  - cross-referencing
+  - template-based-docs
+  - spec-management
+ideal_use_cases:
+  - scenario: Creating an Architecture Decision Record for a technology choice
+    why: ADR template ensures consistent format with context, decision, alternatives, consequences
+    model_hint: mimo-v2.5-pro
+    recipe_hint: design-pattern-eval
+  - scenario: Writing a PRD for a new feature
+    why: Structured template covers requirements, acceptance criteria, and dependencies
+  - scenario: Building implementation plans with cross-references to specs
+    why: Cross-referencing links ADRs to implementation tasks
+anti_patterns:
+  - scenario: Projects that don't use formal documentation processes
+    why: Spec docs require buy-in from the team — unused docs become tech debt
+    alternative: inline-comments
+  - scenario: Rapid prototyping where documentation slows iteration
+    why: Formal specs add overhead to fast iteration cycles
+    alternative: readme-only
+dependencies: []
+thinking_level: medium
+notes: Template-based — ensures consistency across all documents. Cross-referencing system links specs together for traceability.
+version: "latest"

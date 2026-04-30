@@ -1,0 +1,38 @@
+id: pi-prompt-template-model
+name: Pi Prompt Template Model
+npm: "pi-prompt-template-model"
+category: meta
+description: Prompt template model selector with frontmatter for model switching, skill injection, thinking levels, chain execution, loop control, and context management — the backbone of the recipe system.
+capabilities:
+  - model-switching
+  - skill-injection
+  - thinking-level-control
+  - chain-execution
+  - loop-execution
+  - context-management
+  - boomerang-support
+  - parallel-execution
+  - worktree-support
+  - subagent-delegation
+ideal_use_cases:
+  - scenario: Creating slash commands that automatically switch to the optimal model
+    why: Frontmatter model field ensures the right model is used without manual switching
+    model_hint: mimo-v2.5-pro
+  - scenario: Building multi-step recipes with context collapse
+    why: Chain + boomerang + chainContext provide complete workflow orchestration
+    recipe_hint: all-recipes
+  - scenario: Running iterative improvements with convergence detection
+    why: Loop + converge + fresh provide sophisticated iteration control
+  - scenario: Parallel task execution with model rotation
+    why: Parallel + rotate + worktree enable safe parallel experimentation
+anti_patterns:
+  - scenario: Simple one-off prompts that don't need configuration
+    why: Frontmatter adds structure that's unnecessary for casual prompts
+    alternative: direct-prompt
+  - scenario: Workflows that need dynamic model selection based on runtime conditions
+    why: Model selection is static in frontmatter — no runtime decision-making
+    alternative: pi-orchestration
+dependencies: []
+thinking_level: low
+notes: THIS IS THE MOST CRITICAL EXTENSION — the entire recipe system is built on top of it. Every recipe in pi-recipes generates a pi-prompt-template-model compatible file. Supports subagent delegation with pi-subagents (optional). The chain system is the equivalent of Goose's TOM recipes.
+version: "latest"

@@ -1,0 +1,31 @@
+id: pi-processes
+name: Pi Processes
+npm: "@aliou/pi-processes"
+category: infrastructure
+description: Background process management for Pi — start long-running commands (dev servers, test watchers, build pipelines) while continuing to work, with dock, log inspection, and pinning.
+capabilities:
+  - background-process-management
+  - process-panel
+  - log-inspection
+  - process-pinning
+  - runtime-log-watch-alerts
+  - process-dock
+ideal_use_cases:
+  - scenario: Starting a dev server and continuing to code without context switching
+    why: Pi manages the dev server in the background while you keep working in the conversation
+    model_hint: mimo-v2.5-pro
+  - scenario: Running a test watcher and inspecting failing tests
+    why: Log inspection with follow mode lets you monitor test output without blocking the agent
+  - scenario: Monitoring build output for errors in real-time
+    why: Runtime log watch alerts fire immediately when error patterns appear in stderr
+anti_patterns:
+  - scenario: Quick one-off commands that finish in under 5 seconds
+    why: Background process management adds overhead for commands that complete instantly
+    alternative: direct-bash-execution
+  - scenario: Windows environments
+    why: Explicitly not supported on Windows
+    alternative: wsl-or-wsl2
+dependencies: []
+thinking_level: low
+notes: macOS and Linux only. The dock provides a compact live view. Log watches support regex patterns with repeat and stream scoping. Commands like /ps, /ps:logs, and /ps:pin provide quick access.
+version: "latest"

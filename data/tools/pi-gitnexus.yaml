@@ -1,0 +1,30 @@
+id: pi-gitnexus
+name: Pi GitNexus
+npm: "pi-gitnexus"
+category: quality
+description: GitNexus knowledge graph integration — enriches code searches with call chains, execution flows, and blast radius analysis.
+capabilities:
+  - knowledge-graph
+  - call-chain-analysis
+  - execution-flow-mapping
+  - blast-radius-analysis
+  - enriched-search
+ideal_use_cases:
+  - scenario: Understanding the blast radius of a function change
+    why: Knowledge graph shows all callers, callees, and transitive dependencies
+    model_hint: mimo-v2.5-pro
+  - scenario: Tracing execution flows through complex codebases
+    why: Call chain analysis maps the complete execution path for any function
+  - scenario: Impact analysis before refactoring
+    why: See exactly what will be affected by a change before making it
+anti_patterns:
+  - scenario: Small codebases with simple call hierarchies
+    why: Knowledge graph adds overhead that's unnecessary for straightforward code
+    alternative: grep-search
+  - scenario: Codebases without language server support
+    why: Depends on LSP for building the knowledge graph
+    alternative: manual-tracing
+dependencies: []
+thinking_level: medium
+notes: Requires the GitNexus backend service. Most valuable for large, complex codebases where understanding relationships is difficult.
+version: "latest"

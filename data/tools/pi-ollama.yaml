@@ -1,0 +1,31 @@
+id: pi-ollama
+name: Pi Ollama
+npm: "@0xkobold/pi-ollama"
+category: meta
+description: Ollama extension for Pi — unified local + cloud Ollama support with model management, pull, delete, and status tracking.
+capabilities:
+  - local-model-support
+  - ollama-integration
+  - model-management
+  - model-pull
+  - model-delete
+  - status-tracking
+ideal_use_cases:
+  - scenario: Running Pi with local models via Ollama for privacy
+    why: No data leaves your machine — all inference happens locally
+    model_hint: mimo-v2.5-pro
+  - scenario: Switching between local and cloud models based on task complexity
+    why: Unified interface supports both — use local for simple tasks, cloud for complex ones
+  - scenario: Managing a library of local models for different use cases
+    why: Pull, delete, and track models without leaving Pi
+anti_patterns:
+  - scenario: Machines without GPU or sufficient RAM for local inference
+    why: Local models require significant hardware resources
+    alternative: cloud-only
+  - scenario: Tasks requiring cutting-edge model capabilities
+    why: Local models lag behind cloud models in capability
+    alternative: cloud-provider
+dependencies: []
+thinking_level: low
+notes: Part of @0xkobold ecosystem. Supports both local Ollama and cloud Ollama endpoints.
+version: "latest"

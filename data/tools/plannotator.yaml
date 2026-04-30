@@ -1,0 +1,31 @@
+id: plannotator
+name: Plannotator
+npm: "@plannotator/pi-extension"
+category: planning
+description: Interactive plan review with visual annotation for Pi — creates, reviews, and annotates development plans with visual feedback directly in the TUI.
+capabilities:
+  - plan-creation
+  - plan-review
+  - visual-annotation
+  - interactive-planning
+  - tui-visualization
+ideal_use_cases:
+  - scenario: Creating and reviewing a feature implementation plan with visual annotations
+    why: Visual annotations make plans easier to review and understand at a glance
+    model_hint: mimo-v2.5-pro
+    recipe_hint: feature-planning
+  - scenario: Team planning sessions where plans need to be annotated and discussed
+    why: Interactive annotation supports collaborative plan review
+  - scenario: Breaking down large features into annotated sub-plans
+    why: Hierarchical plan structure with visual feedback keeps complex plans manageable
+anti_patterns:
+  - scenario: Quick one-off tasks that don't need formal planning
+    why: Plan creation and review overhead is wasteful for trivial tasks
+    alternative: direct-implementation
+  - scenario: Non-interactive or automated environments
+    why: Designed for interactive TUI use — not scriptable
+    alternative: pi-task
+dependencies: []
+thinking_level: medium
+notes: TUI-native — the visual annotations are a key differentiator from text-based planning tools.
+version: "latest"

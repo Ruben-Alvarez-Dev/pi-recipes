@@ -1,0 +1,31 @@
+id: pi-codebase-wiki
+name: Pi Codebase Wiki
+npm: "@0xkobold/pi-codebase-wiki"
+category: documentation
+description: Self-updating wiki for your codebase — reads git history and existing docs to build a searchable knowledge base you can query about your code.
+capabilities:
+  - auto-generated-wiki
+  - git-history-integration
+  - searchable-knowledge-base
+  - self-updating
+  - codebase-qa
+ideal_use_cases:
+  - scenario: Onboarding to a new codebase without reading all the docs
+    why: Ask questions about the codebase and get answers based on actual git history and docs
+    model_hint: mimo-v2.5-pro
+    recipe_hint: architecture-review
+  - scenario: Finding out why a specific code change was made
+    why: Git history integration means the wiki knows the intent behind changes
+  - scenario: Keeping documentation up to date without manual effort
+    why: Self-updating — reads git history to stay current
+anti_patterns:
+  - scenario: Brand new repositories with minimal git history
+    why: Wiki quality depends on accumulated git history — empty repos produce empty wikis
+    alternative: manual-documentation
+  - scenario: Repositories with poor commit messages
+    why: Wiki derives context from commits — bad messages lead to bad wiki content
+    alternative: improved-commit-discipline
+dependencies: []
+thinking_level: low
+notes: Read-only — observes git history, does not modify it. Quality improves over time as the repo accumulates history.
+version: "latest"

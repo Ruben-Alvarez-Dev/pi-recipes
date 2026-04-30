@@ -1,0 +1,33 @@
+id: pi-toolchain
+name: Pi Toolchain
+npm: "@aliou/pi-toolchain"
+category: infrastructure
+description: Transparent command rewriting and blocking for Pi — enforces package managers, rewrites Python to uv, and handles git rebase non-interactively using AST-based shell parsing.
+capabilities:
+  - command-rewriting
+  - package-manager-enforcement
+  - python-uv-rewrite
+  - git-rebase-non-interactive
+  - brew-blocking
+  - docker-secret-blocking
+  - bash-hook-management
+  - project-scoped-config
+ideal_use_cases:
+  - scenario: Enforcing pnpm as the only package manager across a team
+    why: Rewrites npm/yarn/bun commands to pnpm transparently via AST-based shell parsing — the agent never sees the rewrite
+    model_hint: mimo-v2.5-pro
+  - scenario: Migrating a project from Python + pip to uv
+    why: Automatically rewrites python/pip commands to uv equivalents with confirmation dialogs when outside a uv project
+  - scenario: Running git rebase operations without interactive editor conflicts
+    why: "Injects GIT_EDITOR=true and GIT_SEQUENCE_EDITOR=: env vars so rebase runs non-interactively"
+anti_patterns:
+  - scenario: Using toolchain when no rewriting or blocking is needed
+    why: Adds spawn hooks and tool_call event hooks that are unnecessary overhead for simple projects
+    alternative: pi-default-bash
+  - scenario: Using toolchain to enforce Homebrew alternatives
+    why: toolchain explicitly blocks brew commands — it has no Nix/alternative mapping
+    alternative: manual-configuration
+dependencies: []
+thinking_level: low
+notes: Uses @aliou/sh for AST-based shell parsing. Features are opt-in via config — disabled by default. Works with composed-bash mode for integration with other extensions. First-wins tool registration applies.
+version: "latest"

@@ -1,0 +1,29 @@
+id: pi-token-burden
+name: Pi Token Burden
+npm: "pi-token-burden"
+category: meta
+description: Shows a token-budget breakdown of the assembled system prompt — helps understand how much context each extension and skill consumes.
+capabilities:
+  - token-analysis
+  - budget-breakdown
+  - context-usage-reporting
+  - extension-size-auditing
+ideal_use_cases:
+  - scenario: Diagnosing why the agent's context window is filling up
+    why: Shows exactly which extensions, skills, and instructions consume the most tokens
+    model_hint: mimo-v2.5-pro
+  - scenario: Optimizing Pi configuration by removing heavy extensions
+    why: Token breakdown reveals which extensions are worth their context cost
+  - scenario: Deciding whether to add a new extension
+    why: Check the token cost before installing — prevents context bloat
+anti_patterns:
+  - scenario: Normal day-to-day coding with stable configuration
+    why: Only useful when actively debugging context usage — not needed during regular work
+    alternative: none-needed
+  - scenario: Models with very large context windows (200k+)
+    why: Token budget is less critical when context is abundant
+    alternative: skip-optimization
+dependencies: []
+thinking_level: low
+notes: Read-only diagnostic tool — does not modify anything. Essential for managing the 53-extension setup where context bloat is a real concern.
+version: "latest"

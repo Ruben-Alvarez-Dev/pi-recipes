@@ -1,0 +1,30 @@
+id: pi-rewind-hook
+name: Pi Rewind Hook
+npm: "pi-rewind-hook"
+category: infrastructure
+description: Automatic git checkpoints with file and conversation restore — creates git stash/checkpoint before each agent turn, enabling rollback to any previous state.
+capabilities:
+  - git-checkpoints
+  - conversation-restore
+  - file-restore
+  - state-snapshots
+  - rollback-support
+ideal_use_cases:
+  - scenario: Agent makes destructive changes and you need to undo to a specific point
+    why: Every agent turn creates a checkpoint — you can rewind to any previous conversation state
+    model_hint: mimo-v2.5-pro
+  - scenario: Experimenting with risky refactors
+    why: Safety net — if the refactor goes wrong, rewind to the pre-experiment state
+  - scenario: Comparing agent's work across multiple turns
+    why: Checkpoints let you diff the codebase state at different points in the conversation
+anti_patterns:
+  - scenario: Repositories with very frequent commits or massive binary files
+    why: Creates a checkpoint per turn — can bloat git history with unnecessary snapshots
+    alternative: manual-git-checkpoints
+  - scenario: Environments without git initialized
+    why: Completely dependent on git — no checkpoint without a git repo
+    alternative: manual-backup
+dependencies: []
+thinking_level: low
+notes: Transparent operation — works automatically without user intervention. Checkpoints are git-based so they integrate with existing git workflow.
+version: "latest"

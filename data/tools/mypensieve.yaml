@@ -1,0 +1,31 @@
+id: mypensieve
+name: MyPensieve
+npm: "mypensieve"
+category: memory
+description: General-purpose self-evolving autonomous agent OS with persistent memory across sessions — provides a complete memory and learning system for AI agents.
+capabilities:
+  - persistent-memory
+  - autonomous-learning
+  - cross-session-memory
+  - agent-os
+  - self-evolution
+  - memory-hierarchy
+ideal_use_cases:
+  - scenario: Building agents that improve themselves over time through experience
+    why: Self-evolving memory means the agent gets better with each interaction
+    model_hint: mimo-v2.5-pro
+  - scenario: Complex projects spanning weeks with continuity requirements
+    why: Persistent memory ensures no context is lost between sessions
+  - scenario: Multi-agent systems needing shared memory
+    why: Agent OS architecture supports inter-agent memory sharing
+anti_patterns:
+  - scenario: Simple tasks not requiring persistence
+    why: Full agent OS is heavyweight for straightforward tasks
+    alternative: pi-memory
+  - scenario: Environments with limited storage or memory constraints
+    why: Memory hierarchy can consume significant storage over time
+    alternative: pi-session-recall
+dependencies: []
+thinking_level: medium
+notes: Named after the Pensieve from Harry Potter — a memory storage device. More comprehensive than pi-memory but also more complex to set up. Read the README carefully for configuration requirements.
+version: "latest"

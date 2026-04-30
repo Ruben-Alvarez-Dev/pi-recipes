@@ -1,0 +1,27 @@
+id: babysitter-pi
+name: Babysitter Pi
+npm: "@a5c-ai/babysitter-pi"
+category: orchestration
+description: Automated supervision package for Pi — monitors the agent's behavior and can intervene when it goes off track, providing guardrails for autonomous operation.
+capabilities:
+  - agent-supervision
+  - behavior-monitoring
+  - autonomous-guardrails
+  - intervention-triggering
+ideal_use_cases:
+  - scenario: Long-running autonomous tasks where the agent might drift off topic
+    why: Supervision catches when the agent loses focus and can redirect it
+    model_hint: mimo-v2.5-pro
+  - scenario: Multi-step tasks where early mistakes compound
+    why: Monitoring catches errors early before they cascade through subsequent steps
+anti_patterns:
+  - scenario: Short interactive sessions with constant user guidance
+    why: Supervision is redundant when the user is actively directing every step
+    alternative: manual-supervision
+  - scenario: Tasks requiring creative freedom and exploration
+    why: Guardrails may interfere with the agent's ability to explore unconventional solutions
+    alternative: unguided-exploration
+dependencies: []
+thinking_level: medium
+notes: Lightweight supervision — not a full orchestrator. Works best combined with ralph-wiggum or super-pi for iterative development loops.
+version: "latest"

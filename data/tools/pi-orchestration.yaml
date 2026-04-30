@@ -1,0 +1,32 @@
+id: pi-orchestration
+name: Pi Orchestration
+npm: "@0xkobold/pi-orchestration"
+category: orchestration
+description: Agnostic subagent orchestration for Pi — supports single, chain, parallel, and fork execution modes with depth limiting and worktree isolation.
+capabilities:
+  - multi-mode-execution
+  - chain-execution
+  - parallel-execution
+  - fork-execution
+  - depth-limiting
+  - worktree-isolation
+  - agnostic-orchestration
+ideal_use_cases:
+  - scenario: Complex workflows requiring both sequential and parallel steps
+    why: Supports chain, parallel, and fork modes — orchestrate any workflow topology
+    model_hint: mimo-v2.5-pro
+  - scenario: Safe parallel experimentation with worktree isolation
+    why: Worktree isolation ensures parallel tasks don't interfere with each other's files
+  - scenario: Preventing runaway agent recursion
+    why: Depth limiting stops infinite agent spawning loops
+anti_patterns:
+  - scenario: Simple sequential tasks with no parallelism
+    why: Full orchestration engine is overkill for linear task execution
+    alternative: pi-boomerang
+  - scenario: Worktrees not available or not desired
+    why: Fork mode depends on git worktrees — won't work without them
+    alternative: pi-subagents
+dependencies: []
+thinking_level: medium
+notes: The most flexible orchestrator — supports 4 execution modes. Part of @0xkobold ecosystem. "Agnostic" means it works with any Pi extension, not just kobold tools.
+version: "latest"

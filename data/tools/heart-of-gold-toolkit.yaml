@@ -1,0 +1,32 @@
+id: heart-of-gold-toolkit
+name: Heart of Gold Toolkit
+npm: "@heart-of-gold/toolkit"
+category: meta
+description: Cross-platform installer for Heart of Gold skills — works with Codex, OpenCode, Pi, Claude Code, and more. Provides 32 skills and 5 plugins covering brainstorm, plan, architect, work, and more.
+capabilities:
+  - skill-installation
+  - cross-platform-support
+  - brainstorm-skill
+  - plan-skill
+  - architect-skill
+  - work-skill
+  - plugin-system
+ideal_use_cases:
+  - scenario: Adding structured brainstorming capabilities to any AI coding agent
+    why: The brainstorm skill provides structured ideation that works across all supported platforms
+    model_hint: mimo-v2.5-pro
+  - scenario: Using the plan→architect→work skill chain for feature development
+    why: Skills are designed to work in sequence — plan first, architect the solution, then implement
+  - scenario: Installing skills once and having them available across multiple agents
+    why: Cross-platform installer means skills work in Claude Code, Codex, OpenCode, and Pi
+anti_patterns:
+  - scenario: Projects with their own established skill system
+    why: Heart of Gold skills may conflict with custom skill definitions
+    alternative: custom-skills
+  - scenario: Using only one or two specific skills from the toolkit
+    why: Installs 32 skills — most will be unused if you only need one or two
+    alternative: manual-skill-creation
+dependencies: []
+thinking_level: medium
+notes: "32 skills + 5 plugins. Key workflow: brainstorm -> plan -> architect -> work. Works across Claude Code, Codex, OpenCode, Pi."
+version: "latest"

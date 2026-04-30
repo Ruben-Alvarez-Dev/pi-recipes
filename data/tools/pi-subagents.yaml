@@ -1,0 +1,30 @@
+id: pi-subagents
+name: Pi Subagents
+npm: "@tintinweb/pi-subagents"
+category: orchestration
+description: Claude Code-style autonomous sub-agents for Pi — spawns independent agent instances for parallel or sequential task execution with isolated contexts.
+capabilities:
+  - subagent-spawning
+  - parallel-execution
+  - context-isolation
+  - autonomous-delegation
+  - agent-hierarchy
+ideal_use_cases:
+  - scenario: Parallelizing independent research tasks across multiple agents
+    why: Each subagent works in isolation — no context pollution between parallel tasks
+    model_hint: mimo-v2.5-pro
+  - scenario: Delegating a well-defined subtask while continuing main conversation
+    why: Main agent stays responsive while the subagent handles the heavy lifting
+  - scenario: Running multiple implementation strategies in parallel to compare results
+    why: Isolated contexts mean each strategy is evaluated independently
+anti_patterns:
+  - scenario: Tasks requiring shared mutable state between agents
+    why: Subagents have isolated contexts — they cannot directly share state
+    alternative: pi-orchestration
+  - scenario: Simple tasks not worth the overhead of spawning a new agent
+    why: Subagent creation has overhead — use it for substantial tasks only
+    alternative: direct-execution
+dependencies: []
+thinking_level: medium
+notes: Claude Code-style delegation — each subagent is a full Pi instance. Resource-intensive but powerful for parallel work.
+version: "latest"

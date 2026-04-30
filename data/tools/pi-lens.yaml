@@ -1,0 +1,31 @@
+id: pi-lens
+name: Pi Lens
+npm: "pi-lens"
+category: infrastructure
+description: Real-time code feedback for Pi — combines LSP diagnostics, linters, formatters, type-checking, and structural analysis with a "booboo" feature for quick error assessment.
+capabilities:
+  - real-time-diagnostics
+  - linting-integration
+  - formatting-integration
+  - type-checking
+  - structural-analysis
+  - error-assessment
+ideal_use_cases:
+  - scenario: Getting comprehensive code quality feedback in one view
+    why: Combines multiple feedback sources (LSP + linters + formatters) into a single interface
+    model_hint: mimo-v2.5-pro
+  - scenario: Quick error assessment before committing
+    why: The "booboo" feature provides fast analysis of code quality issues
+  - scenario: Understanding code structure and relationships
+    why: Structural analysis reveals code organization beyond simple diagnostics
+anti_patterns:
+  - scenario: Projects without configured linters or formatters
+    why: pi-lens depends on external tools being configured — bare projects get minimal value
+    alternative: lsp-pi
+  - scenario: Non-code files or documentation editing
+    why: Designed for source code — markdown and config files get no structural analysis
+    alternative: direct-editing
+dependencies: []
+thinking_level: low
+notes: Overlaps with lsp-pi but provides a superset of features. The "booboo" feature is Pi-specific and has no equivalent in other tools.
+version: "latest"

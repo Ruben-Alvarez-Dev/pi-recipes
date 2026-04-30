@@ -1,0 +1,31 @@
+id: pi-extension-manager
+name: Pi Extension Manager
+npm: "pi-extension-manager"
+category: meta
+description: Interactive extension and package manager for Pi — browse, install, update, and manage Pi extensions from npm registries and git repositories.
+capabilities:
+  - extension-browsing
+  - extension-installation
+  - extension-updates
+  - dependency-management
+  - npm-registry-integration
+  - git-source-support
+ideal_use_cases:
+  - scenario: Discovering new Pi extensions for a specific use case
+    why: Browse and search extensions interactively without leaving Pi
+    model_hint: mimo-v2.5-pro
+  - scenario: Bulk updating all installed extensions
+    why: Can check for and apply updates across all managed extensions
+  - scenario: Installing an extension from a GitHub repository
+    why: Supports git sources alongside npm — useful for unreleased or private extensions
+anti_patterns:
+  - scenario: Automated CI/CD extension installation
+    why: Designed for interactive use — not scriptable for automation
+    alternative: manual-npm-install
+  - scenario: Managing non-Pi npm packages
+    why: Only manages Pi extensions — not a general package manager
+    alternative: npm-cli
+dependencies: []
+thinking_level: low
+notes: Does NOT replace `pi install` command — complements it with browsing and management capabilities.
+version: "latest"

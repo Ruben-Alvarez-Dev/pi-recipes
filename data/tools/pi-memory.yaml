@@ -1,0 +1,32 @@
+id: pi-memory
+name: Pi Memory
+npm: "@samfp/pi-memory"
+category: memory
+description: Persistent memory for Pi — learns corrections, preferences, and patterns from sessions and injects them into future conversations using SQLite-backed storage.
+capabilities:
+  - persistent-memory
+  - correction-learning
+  - preference-storage
+  - pattern-recognition
+  - context-injection
+  - sqlite-storage
+ideal_use_cases:
+  - scenario: Remembering user preferences across sessions (coding style, naming conventions)
+    why: Stores and recalls corrections automatically — the agent adapts to your preferences over time
+    model_hint: mimo-v2.5-pro
+    recipe_hint: deep-debugging
+  - scenario: Building institutional knowledge about a codebase over time
+    why: Accumulates patterns and insights that improve with each session
+  - scenario: Preventing the agent from repeating the same mistakes
+    why: Correction learning means once you fix a mistake, it's remembered permanently
+anti_patterns:
+  - scenario: First-time interactions with no accumulated memory
+    why: Memory is empty on first use — provides no benefit until corrections accumulate
+    alternative: agentic-instructions
+  - scenario: Highly sensitive projects where conversation data should not persist
+    why: Stores conversation data in SQLite — may retain sensitive information
+    alternative: ephemeral-mode
+dependencies: []
+thinking_level: low
+notes: Requires Node 22+ for node:sqlite support. Data is stored locally in the Pi agent directory. Context injection happens automatically at conversation start.
+version: "latest"

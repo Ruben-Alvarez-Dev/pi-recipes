@@ -1,0 +1,30 @@
+id: pi-persona
+name: Pi Persona
+npm: "@0xkobold/pi-persona"
+category: meta
+description: Persona management for Pi agents — SOUL.md, IDENTITY.md, USER.md loading, scaffolding, and system prompt injection. Inspired by OpenClaw.
+capabilities:
+  - persona-loading
+  - identity-management
+  - user-profiling
+  - system-prompt-injection
+  - persona-scaffolding
+ideal_use_cases:
+  - scenario: Switching between different agent personas for different tasks
+    why: SOUL.md defines the agent's behavior — load different souls for different workflows
+    model_hint: mimo-v2.5-pro
+  - scenario: Customizing the agent's behavior and communication style
+    why: IDENTITY.md and USER.md provide fine-grained control over how the agent presents itself
+  - scenario: Setting up a new Pi instance with a predefined persona
+    why: Scaffolding generates the initial persona files automatically
+anti_patterns:
+  - scenario: Using Pi with default behavior and no persona customization
+    why: Persona files add overhead when the default agent behavior is sufficient
+    alternative: default-persona
+  - scenario: Rapidly switching personas within a single session
+    why: System prompt injection affects the entire session — not designed for frequent switching
+    alternative: agentic-instructions
+dependencies: []
+thinking_level: low
+notes: Inspired by OpenClaw. SOUL.md defines core behavior, IDENTITY.md defines presentation, USER.md defines user-specific context. Part of @0xkobold ecosystem.
+version: "latest"

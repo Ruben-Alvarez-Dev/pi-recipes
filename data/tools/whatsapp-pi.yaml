@@ -1,0 +1,27 @@
+id: whatsapp-pi
+name: WhatsApp Pi
+npm: "whatsapp-pi"
+category: communication
+description: WhatsApp integration extension for Pi — send messages, notifications, and updates directly to WhatsApp from the agent.
+capabilities:
+  - whatsapp-messaging
+  - notification-sending
+  - message-delivery
+  - agent-to-user-communication
+ideal_use_cases:
+  - scenario: Sending build/deploy notifications to a WhatsApp group
+    why: Agent sends status updates directly to your phone via WhatsApp
+    model_hint: mimo-v2.5-pro
+  - scenario: Getting agent alerts when away from the computer
+    why: WhatsApp reaches you wherever you are — no need to check the terminal
+anti_patterns:
+  - scenario: Professional environments requiring audit-trail communication
+    why: WhatsApp messages are not audit-friendly — no record in project management tools
+    alternative: slack-integration
+  - scenario: High-frequency automated messages
+    why: May trigger WhatsApp rate limits or get flagged as spam
+    alternative: email-notifications
+dependencies: []
+thinking_level: low
+notes: Requires WhatsApp API credentials. Check compliance requirements before using in professional settings.
+version: "latest"
