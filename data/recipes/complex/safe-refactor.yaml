@@ -1,0 +1,57 @@
+id: safe-refactor
+name: Safe Refactoring
+description: Protected multi-step refactoring with sequential analysis, diff preview, guardrails, and spec documentation.
+archetype: refactoring
+complexity: complex
+model: mimo-v2.5-pro
+thinking: high
+steps:
+  - id: analyze
+    name: Refactoring Analysis
+    tool: pi-sequential-thinking
+    prompt: |
+      Analyze the refactoring opportunity:
+      1. Identify the code smell or improvement opportunity
+      2. Define the target state (what should the code look like after)
+      3. Assess the blast radius (what else depends on this code)
+      4. Plan the refactoring in safe, reversible steps
+    thinking: high
+    chain_context: full
+  - id: review-diffs
+    name: Diff Review
+    tool: pi-show-diffs
+    prompt: |
+      Review each proposed change:
+      1. Show the diff for each file that will be modified
+      2. Verify no unintended changes are included
+      3. Check that the change achieves the stated goal
+      4. Approve or reject each change individually
+    chain_context: summary
+  - id: guard-check
+    name: Safety Check
+    tool: pi-guardrails
+    prompt: |
+      Verify safety of the refactoring:
+      1. Check that no protected files are being modified
+      2. Verify no secrets or credentials are exposed
+      3. Ensure the changes don't break any imports or dependencies
+    chain_context: summary
+  - id: document
+    name: Document Changes
+    tool: pi-specdocs
+    prompt: |
+      Document the refactoring:
+      1. Create an ADR explaining why the refactoring was needed
+      2. Document the before/after state
+      3. Note any risks or follow-up work needed
+    chain_context: summary
+tags:
+  - refactoring
+  - safety
+  - review
+  - guarded
+prerequisites:
+  - pi-sequential-thinking
+  - pi-show-diffs
+  - pi-guardrails
+  - pi-specdocs

@@ -1,0 +1,25 @@
+id: sequential-analysis
+name: Sequential Analysis
+description: Single-tool structured reasoning for analysis tasks using progressive thinking stages.
+archetype: analysis
+complexity: simple
+model: mimo-v2.5-pro
+thinking: high
+steps:
+  - id: think
+    name: Structured Reasoning
+    tool: pi-sequential-thinking
+    prompt: |
+      Analyze the following problem step by step:
+      1. Define the problem clearly
+      2. Identify constraints and assumptions
+      3. Explore possible solutions
+      4. Evaluate trade-offs
+      5. Recommend the best approach with confidence levels
+tags:
+  - analysis
+  - reasoning
+  - thinking
+  - default
+prerequisites:
+  - pi-sequential-thinking

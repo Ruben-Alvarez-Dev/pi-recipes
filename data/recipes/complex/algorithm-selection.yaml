@@ -1,0 +1,55 @@
+id: algorithm-selection
+name: Algorithm Selection
+description: Systematic evaluation of algorithmic approaches with branching analysis, complexity assessment, and implementation recommendation.
+archetype: design
+complexity: complex
+model: mimo-v2.5-pro
+thinking: high
+boomerang: true
+steps:
+  - id: define-problem
+    name: Problem Definition
+    tool: pi-sequential-thinking
+    prompt: |
+      Define the algorithmic problem precisely:
+      1. State the problem in formal terms (input, output, constraints)
+      2. Identify the data characteristics (size, distribution, mutability)
+      3. Determine the performance requirements (time, space, latency)
+      4. Note any edge cases or special conditions
+    thinking: high
+    chain_context: full
+  - id: branch-analysis
+    name: Algorithm Branching Analysis
+    tool: fenix-code-reasoning
+    prompt: |
+      Explore multiple algorithmic approaches in parallel branches:
+      1. Branch 1: Naive/brute-force approach (baseline)
+      2. Branch 2: Optimal approach (best known solution)
+      3. Branch 3: Pragmatic approach (best balance of simplicity and performance)
+      For each branch evaluate:
+      - Time complexity (best, average, worst)
+      - Space complexity
+      - Implementation complexity
+      - Real-world performance considerations
+    model: claude-sonnet-4-20250514
+    chain_context: summary
+  - id: recommend
+    name: Recommendation
+    tool: pi-sequential-thinking
+    prompt: |
+      Synthesize the analysis into a clear recommendation:
+      1. Compare all branches side by side
+      2. Select the best approach based on the problem constraints
+      3. Provide implementation pseudocode or description
+      4. Note any gotchas or common mistakes
+    thinking: high
+    chain_context: summary
+tags:
+  - algorithm
+  - design
+  - optimization
+  - complexity
+  - branching
+prerequisites:
+  - pi-sequential-thinking
+  - fenix-code-reasoning

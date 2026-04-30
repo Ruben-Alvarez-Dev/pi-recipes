@@ -1,0 +1,60 @@
+id: feature-planning
+name: Feature Planning
+description: End-to-end feature planning with interactive annotations, task management, sequential thinking, and specification docs.
+archetype: planning
+complexity: complex
+model: mimo-v2.5-pro
+thinking: medium
+steps:
+  - id: annotate-plan
+    name: Plan Annotation
+    tool: plannotator
+    prompt: |
+      Create and annotate the feature plan:
+      1. Define the feature scope and acceptance criteria
+      2. Break down into sub-tasks with estimates
+      3. Annotate dependencies and risks
+      4. Review with visual annotations
+    thinking: medium
+    chain_context: full
+  - id: task-breakdown
+    name: Task Management
+    tool: pi-task
+    prompt: |
+      Create task cards for implementation:
+      1. Convert plan items into kanban tasks
+      2. Set initial status (backlog)
+      3. Add dependencies between tasks
+      4. Note blockers or risks
+    chain_context: summary
+  - id: think-through
+    name: Implementation Thinking
+    tool: pi-sequential-thinking
+    prompt: |
+      Think through the implementation approach:
+      1. Evaluate the task breakdown for completeness
+      2. Identify potential technical challenges
+      3. Propose solutions for each challenge
+      4. Suggest implementation order for optimal flow
+    thinking: medium
+    chain_context: summary
+  - id: spec
+    name: Feature Specification
+    tool: pi-specdocs
+    prompt: |
+      Generate feature specification:
+      1. Create a PRD with requirements and acceptance criteria
+      2. Document technical approach and architecture decisions
+      3. Add cross-references to task cards
+    chain_context: summary
+tags:
+  - planning
+  - feature
+  - kanban
+  - specification
+  - workflow
+prerequisites:
+  - plannotator
+  - pi-task
+  - pi-sequential-thinking
+  - pi-specdocs

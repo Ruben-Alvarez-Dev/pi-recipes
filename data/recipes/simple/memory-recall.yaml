@@ -1,0 +1,24 @@
+id: memory-recall
+name: Memory Recall
+description: Search and retrieve information from past sessions and persistent memory.
+archetype: research
+complexity: simple
+model: mimo-v2.5-pro
+thinking: low
+steps:
+  - id: recall
+    name: Session and Memory Search
+    tool: pi-session-recall
+    prompt: |
+      Search for relevant information from past sessions and memory:
+      1. Identify key terms from the current query
+      2. Search past sessions for related conversations
+      3. Check persistent memory for relevant patterns and corrections
+      4. Synthesize findings into a coherent summary
+tags:
+  - memory
+  - recall
+  - context
+prerequisites:
+  - pi-session-recall
+  - pi-memory

@@ -1,0 +1,66 @@
+id: tdd-implementation
+name: TDD Implementation
+description: Full test-driven development cycle with planning, sequential thinking, code reasoning, test execution, and spec documentation.
+archetype: implementation
+complexity: complex
+model: mimo-v2.5-pro
+thinking: high
+steps:
+  - id: plan
+    name: Test Planning
+    tool: plannotator
+    prompt: |
+      Plan the TDD approach for the feature:
+      1. Break the feature into testable units
+      2. Define the test cases for each unit (happy path, edge cases, errors)
+      3. Order tests from simplest to most complex
+      4. Identify any test infrastructure needed
+    thinking: medium
+    chain_context: full
+  - id: think-implementation
+    name: Implementation Thinking
+    tool: pi-sequential-thinking
+    prompt: |
+      Think through the implementation strategy:
+      1. Review the test plan and identify implementation order
+      2. For each test, think about what code makes it pass
+      3. Identify shared abstractions and helper code
+      4. Plan the refactoring steps after initial implementation
+    thinking: high
+    chain_context: summary
+  - id: implement-and-test
+    name: Code and Test
+    tool: fenix-code-reasoning
+    prompt: |
+      Implement following TDD cycle:
+      1. Write the FIRST failing test
+      2. Write the MINIMUM code to make it pass
+      3. Refactor while keeping tests green
+      4. Move to the next test
+      5. If a test reveals a design issue, branch and explore alternatives
+    model: claude-sonnet-4-20250514
+    chain_context: summary
+    loop:
+      count: 10
+      converge: true
+      fresh: true
+  - id: document
+    name: Document Implementation
+    tool: pi-specdocs
+    prompt: |
+      Document the implementation:
+      1. Create an implementation plan documenting what was built
+      2. Note any design decisions made during TDD
+      3. Record test coverage and any untested edge cases
+    chain_context: summary
+tags:
+  - tdd
+  - testing
+  - implementation
+  - iterative
+  - quality
+prerequisites:
+  - plannotator
+  - pi-sequential-thinking
+  - fenix-code-reasoning
+  - pi-specdocs

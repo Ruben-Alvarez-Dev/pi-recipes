@@ -1,0 +1,25 @@
+id: quick-docs
+name: Quick Documentation
+description: Generate structured documentation from code using spec templates.
+archetype: documentation
+complexity: simple
+model: mimo-v2.5-pro
+thinking: medium
+steps:
+  - id: spec
+    name: Generate Specification
+    tool: pi-specdocs
+    prompt: |
+      Generate structured documentation for the specified code or feature:
+      1. Analyze the code/feature to document
+      2. Select the appropriate template (PRD, ADR, or implementation plan)
+      3. Fill in all required sections with accurate information
+      4. Add cross-references to related specs
+      5. Review for completeness and consistency
+tags:
+  - documentation
+  - specs
+  - prd
+  - adr
+prerequisites:
+  - pi-specdocs

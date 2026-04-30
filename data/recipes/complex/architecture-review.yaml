@@ -1,0 +1,60 @@
+id: architecture-review
+name: Architecture Review
+description: Comprehensive architecture analysis with codebase knowledge, visual diagrams, and specification documentation.
+archetype: analysis
+complexity: complex
+model: mimo-v2.5-pro
+thinking: high
+boomerang: true
+steps:
+  - id: gather-knowledge
+    name: Codebase Knowledge
+    tool: pi-codebase-wiki
+    prompt: |
+      Gather architecture context:
+      1. Query the codebase wiki for architecture decisions
+      2. Identify the main modules and their responsibilities
+      3. Map the dependency graph between components
+      4. Note any architectural patterns already in use
+    thinking: low
+    chain_context: full
+  - id: analyze
+    name: Architecture Analysis
+    tool: pi-sequential-thinking
+    prompt: |
+      Perform deep architecture analysis:
+      1. Evaluate the current architecture against SOLID principles
+      2. Identify coupling and cohesion issues
+      3. Assess scalability and maintainability
+      4. Note any architectural drift from original design
+    thinking: high
+    chain_context: summary
+  - id: visualize
+    name: Visual Diagrams
+    tool: pi-mermaid
+    prompt: |
+      Create visual representations:
+      1. Draw a component diagram showing module relationships
+      2. Create a sequence diagram for the main data flow
+      3. Add an ER diagram if data models are relevant
+    chain_context: summary
+  - id: spec-docs
+    name: Specification Documentation
+    tool: pi-specdocs
+    prompt: |
+      Document findings as specifications:
+      1. Create an ADR for any architectural changes recommended
+      2. Write a PRD if new architectural components are needed
+      3. Cross-reference with existing documentation
+    chain_context: summary
+tags:
+  - architecture
+  - review
+  - visualization
+  - analysis
+  - solid
+prerequisites:
+  - pi-codebase-wiki
+  - pi-sequential-thinking
+  - pi-mermaid
+  - pi-specdocs

@@ -1,0 +1,63 @@
+id: design-pattern-eval
+name: Design Pattern Evaluation
+description: Multi-step workflow for evaluating and selecting design patterns with structured analysis, branching code reasoning, and ADR documentation.
+archetype: design
+complexity: complex
+model: mimo-v2.5-pro
+thinking: high
+boomerang: true
+steps:
+  - id: analyze-problem
+    name: Problem Analysis
+    tool: pi-sequential-thinking
+    prompt: |
+      Analyze the design problem deeply:
+      1. Define the core problem and its context in the codebase
+      2. Identify the forces at play (constraints, requirements, trade-offs)
+      3. List 2-3 candidate patterns that could address the problem
+      4. For each candidate, note initial pros and cons
+    thinking: high
+    chain_context: full
+  - id: evaluate-patterns
+    name: Pattern Evaluation
+    tool: fenix-code-reasoning
+    prompt: |
+      Evaluate each candidate pattern with branching analysis:
+      1. For each candidate pattern, create a branch of analysis
+      2. Evaluate: pros, cons, complexity, maintainability, testability
+      3. Score each on a 1-5 scale for: fit, simplicity, extensibility
+      4. Identify the clear winner with reasoning
+      5. If no clear winner, explore hybrid approaches
+    model: claude-sonnet-4-20250514
+    chain_context: summary
+  - id: document-decision
+    name: Document as ADR
+    tool: pi-specdocs
+    prompt: |
+      Create an Architecture Decision Record using the ADR template:
+      - Context: what problem needed solving and what forces were at play
+      - Decision: which pattern was chosen and why it scored highest
+      - Alternatives: what was considered and why it was rejected
+      - Consequences: what this means for the codebase going forward
+      - Add cross-references to related specs and code locations
+    chain_context: summary
+  - id: wiki-entry
+    name: Update Codebase Wiki
+    tool: pi-codebase-wiki
+    prompt: |
+      Update the codebase wiki with the pattern decision:
+      1. Record the chosen pattern and where it was applied
+      2. Note the problem it solves and any constraints
+      3. Link to the ADR created in the previous step
+    chain_context: summary
+tags:
+  - design
+  - patterns
+  - architecture
+  - evaluation
+  - adr
+prerequisites:
+  - pi-sequential-thinking
+  - fenix-code-reasoning
+  - pi-specdocs
+  - pi-codebase-wiki
