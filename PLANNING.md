@@ -16,7 +16,7 @@ Build a spec-driven orchestration system that makes Pi intelligently select and 
 | Architecture document | `ARCHITECTURE.md` | — |
 | Planning document | `PLANNING.md` | — |
 | Glossary | `docs/glossary.md` | — |
-| Domain specs | `specs/*.spec.md` (4 files) | — |
+| Domain specs | `openspec/specs/*/spec.md` (4 files) | — |
 | ADRs | `docs/decisions/*.md` | — |
 
 ### Phase 2: Schemas & Validation

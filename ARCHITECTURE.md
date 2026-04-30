@@ -147,11 +147,14 @@ pi-recipes/
 │       ├── valid-recipe.yaml
 │       └── valid-router-rule.yaml
 │
-├── specs/                             # Spec definitions (before code)
-│   ├── tool-inventory.spec.md
-│   ├── recipe-system.spec.md
-│   ├── router-dispatcher.spec.md
-│   └── artifact-generation.spec.md
+├── openspec/                         # SDD artifacts
+│   ├── config.yaml                   # Project context + rules
+│   ├── specs/                        # Main specs (source of truth)
+│   │   ├── tool-inventory/spec.md
+│   │   ├── recipe-system/spec.md
+│   │   ├── router-dispatcher/spec.md
+│   │   └── artifact-generation/spec.md
+│   └── changes/archive/              # Archived change records
 │
 └── artifacts/                         # Generated output (not committed)
     ├── prompts/                       # Pi chain templates

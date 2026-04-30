@@ -51,7 +51,7 @@ npm run pipeline
 pi-recipes/
 ├── src/            # Domain + Application + Infrastructure
 ├── data/           # YAML source of truth (tools, recipes, router)
-├── specs/          # Spec definitions (before code)
+├── openspec/       # SDD — specs, changes, archive
 ├── tests/          # TDD — tests first, always
 ├── docs/           # Architecture, glossary, ADRs
 └── artifacts/      # Generated output (not committed)
