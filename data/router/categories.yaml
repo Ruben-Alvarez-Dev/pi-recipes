@@ -1,0 +1,111 @@
+# Category definitions for the router
+# Used for fallback routing when no pattern matches
+
+categories:
+  thinking:
+    name: Thinking and Reasoning
+    description: Analytical tasks requiring structured thought
+    default_recipe: sequential-analysis
+    keywords:
+      - think
+      - analyze
+      - reason
+      - evaluate
+      - compare
+      - design
+      - algorithm
+      - complexity
+
+  memory:
+    name: Memory and Recall
+    description: Retrieving information from past sessions
+    default_recipe: memory-recall
+    keywords:
+      - remember
+      - recall
+      - previous
+      - earlier
+      - history
+      - session
+
+  planning:
+    name: Planning
+    description: Task decomposition and project planning
+    default_recipe: feature-planning
+    keywords:
+      - plan
+      - task
+      - roadmap
+      - milestone
+      - sprint
+      - backlog
+
+  documentation:
+    name: Documentation
+    description: Creating and maintaining documentation
+    default_recipe: quick-docs
+    keywords:
+      - document
+      - spec
+      - prd
+      - adr
+      - readme
+
+  security:
+    name: Security
+    description: Security audits and vulnerability scanning
+    default_recipe: security-audit
+    keywords:
+      - security
+      - vulnerability
+      - secret
+      - credential
+      - audit
+
+  quality:
+    name: Code Quality
+    description: Code review, refactoring, and improvement
+    default_recipe: code-review
+    keywords:
+      - review
+      - refactor
+      - clean
+      - improve
+      - debug
+      - fix
+
+  infrastructure:
+    name: Infrastructure
+    description: Development environment and tooling
+    default_recipe: sequential-analysis
+    keywords:
+      - setup
+      - install
+      - configure
+      - tool
+      - environment
+
+  communication:
+    name: Communication
+    description: Messaging and user interaction
+    default_recipe: sequential-analysis
+    keywords:
+      - message
+      - notify
+      - ask
+      - question
+
+  meta:
+    name: Meta
+    description: Agent configuration and optimization
+    default_recipe: context-audit
+    keywords:
+      - config
+      - extension
+      - model
+      - token
+      - context
+
+# Global fallback when nothing matches
+fallback_recipe: sequential-analysis
+fallback_reason: Sequential thinking is the safest default for any unknown task type

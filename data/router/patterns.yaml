@@ -1,0 +1,142 @@
+# Router patterns — maps problem descriptions to recipes
+# Priority: 1 = highest, 100 = lowest
+# Pattern: regex matched against user input (lowercased)
+
+rules:
+  # Thinking and analysis (highest priority — most common)
+  - id: think-analyze-reason
+    pattern: "(think|analyze|reason|evaluate|compare|weigh|assess)"
+    recipe: sequential-analysis
+    priority: 1
+    description: Matches analysis and reasoning requests
+    category_hint: thinking
+    tags:
+      - thinking
+      - analysis
+
+  - id: design-pattern
+    pattern: "(design pattern|architectural pattern|which pattern|pattern for)"
+    recipe: design-pattern-eval
+    priority: 2
+    description: Matches design pattern evaluation requests
+    category_hint: thinking
+    tags:
+      - design
+      - patterns
+
+  - id: algorithm-choice
+    pattern: "(algorithm|data structure|complexity|big-o|time complexity|space complexity)"
+    recipe: algorithm-selection
+    priority: 2
+    description: Matches algorithm selection and analysis requests
+    category_hint: thinking
+    tags:
+      - algorithm
+      - optimization
+
+  # Debugging
+  - id: debug-fix-error
+    pattern: "(debug|fix|error|crash|broken|failing|bug|issue|not working|wrong)"
+    recipe: deep-debugging
+    priority: 3
+    description: Matches debugging and error fixing requests
+    category_hint: quality
+    tags:
+      - debugging
+      - errors
+
+  # Refactoring
+  - id: refactor-clean-improve
+    pattern: "(refactor|clean up|improve|simplify|restructure|reorganize)"
+    recipe: safe-refactor
+    priority: 4
+    description: Matches refactoring and code improvement requests
+    category_hint: quality
+    tags:
+      - refactoring
+      - quality
+
+  # Code review
+  - id: review-code
+    pattern: "(review|code review|pr review|look at this code|check this)"
+    recipe: code-review
+    priority: 5
+    description: Matches code review requests
+    category_hint: quality
+    tags:
+      - review
+
+  # Testing
+  - id: tdd-test
+    pattern: "(tdd|test-driven|write tests|add tests|test first|unit test|integration test)"
+    recipe: tdd-implementation
+    priority: 5
+    description: Matches TDD and test-writing requests
+    category_hint: testing
+    tags:
+      - testing
+      - tdd
+
+  # Architecture
+  - id: architecture-review
+    pattern: "(architecture|system design|codebase structure|module layout|component diagram)"
+    recipe: architecture-review
+    priority: 6
+    description: Matches architecture review and visualization requests
+    category_hint: documentation
+    tags:
+      - architecture
+      - visualization
+
+  # Planning
+  - id: plan-feature
+    pattern: "(plan|roadmap|task|milestone|feature plan|sprint|backlog)"
+    recipe: feature-planning
+    priority: 7
+    description: Matches feature planning and task management requests
+    category_hint: planning
+    tags:
+      - planning
+      - tasks
+
+  # Documentation
+  - id: document-spec
+    pattern: "(document|spec|prd|adr|readme|specification|api doc)"
+    recipe: quick-docs
+    priority: 8
+    description: Matches documentation generation requests
+    category_hint: documentation
+    tags:
+      - documentation
+
+  # Security
+  - id: security-audit
+    pattern: "(security|vulnerability|secret|credential|audit|owasp|injection|xss)"
+    recipe: security-audit
+    priority: 9
+    description: Matches security audit and scanning requests
+    category_hint: security
+    tags:
+      - security
+
+  # Memory
+  - id: recall-memory
+    pattern: "(remember|recall|previous session|what did we|earlier|before|history)"
+    recipe: memory-recall
+    priority: 10
+    description: Matches memory recall and session history requests
+    category_hint: memory
+    tags:
+      - memory
+      - recall
+
+  # Context optimization
+  - id: context-token
+    pattern: "(context|token|budget|memory usage|too long|running out)"
+    recipe: context-audit
+    priority: 11
+    description: Matches context and token optimization requests
+    category_hint: meta
+    tags:
+      - context
+      - optimization
