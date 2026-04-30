@@ -5,7 +5,6 @@
  */
 
 import type { Recipe, RecipeStep } from '../domain/recipe.js';
-import type { ChainContext } from '../domain/value-objects.js';
 
 function renderModel(recipe: Recipe, step: RecipeStep): string {
   return step.model ?? recipe.model ?? '';
@@ -15,7 +14,7 @@ function renderThinking(recipe: Recipe, step: RecipeStep): string | undefined {
   return step.thinking ?? recipe.thinking;
 }
 
-function renderChainContext(step: RecipeStep, index: number, total: number): string {
+function renderChainContext(step: RecipeStep, index: number): string {
   if (step.chain_context) {
     return step.chain_context;
   }
@@ -60,7 +59,7 @@ export function renderChainTemplate(recipe: Recipe): string {
     const step = recipe.steps[i];
     const stepModel = renderModel(recipe, step);
     const stepThinking = renderThinking(recipe, step);
-    const stepContext = renderChainContext(step, i, recipe.steps.length);
+    const stepContext = renderChainContext(step, i);
     const stepLoop = renderLoop(step);
 
     body.push('');

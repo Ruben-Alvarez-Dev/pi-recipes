@@ -5,7 +5,6 @@
  */
 
 import type { RouterRule } from '../domain/router-rule.js';
-import type { Category } from '../domain/value-objects.js';
 
 interface CategoryDef {
   name: string;

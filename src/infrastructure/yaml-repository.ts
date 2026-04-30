@@ -92,11 +92,10 @@ export function validateTools(dir: string): ValidationResult {
 }
 
 export function validateRecipes(dir: string): ValidationResult {
-  const results = validateTools(dir); // Reuse same logic for recipes dir structure
-  // Actually, recipes have subdirs — handle differently
   let valid = 0;
   let invalid = 0;
   const errors: ValidationResult['errors'] = [];
+
   const dirs = [join(dir, 'simple'), join(dir, 'complex')];
 
   for (const subdir of dirs) {
