@@ -1,0 +1,34 @@
+schema: spec-driven
+
+context: |
+  Tech stack: TypeScript 5.7+ (strict ESM), Node.js 22, Zod, js-yaml, tsx, Vitest 3
+  Architecture: Clean/Hexagonal — domain entities, Zod schemas, infrastructure layer (renderers, repository, CLI)
+  Testing: Vitest with 143 tests — domain schemas (104), chain-renderer (18), skill-renderer (11), yaml-repository (10)
+  Style: TDD mandatory, conventional commits (English), RFC 2119 in specs, kebab-case filenames
+  Pi runtime: pi-prompt-template-model chain system, SKILL.md as router, YAML as source of truth
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Reference existing ADRs when applicable
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include architecture decisions with rationale
+    - Document file structure changes
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    - Follow existing code patterns
+    - TDD: RED-GREEN-REFACTOR for all code
+    - Run `npm test` after each change batch
+  verify:
+    test_command: "npm test"
+    typecheck_command: "npm run typecheck"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+  tdd: true
+  test_command: "npm test"

@@ -1,0 +1,13 @@
+change: initial-implementation
+status: implemented
+phase: verify
+created: "2026-04-30"
+artifacts:
+  - proposal.md
+  - specs/tool-inventory/spec.md
+  - specs/recipe-system/spec.md
+  - specs/router-dispatcher/spec.md
+  - specs/artifact-generation/spec.md
+  - design.md
+  - tasks.md
+  - verify-report.md
