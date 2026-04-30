@@ -1,0 +1,31 @@
+{
+  "name": "pi-recipes",
+  "version": "0.1.0",
+  "description": "Spec-driven Pi agent orchestration — tool inventory, chain recipes, and intelligent router",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "validate": "tsx src/index.ts validate",
+    "generate": "tsx src/index.ts generate",
+    "deploy": "tsx src/index.ts deploy",
+    "pipeline": "tsx src/index.ts pipeline",
+    "status": "tsx src/index.ts status",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["pi", "recipes", "orchestration", "agent", "chain-templates"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "zod": "^3.24.0"
+  }
+}
