@@ -1,0 +1,26 @@
+# Valid tool fixture for schema tests
+id: pi-sequential-thinking
+name: Sequential Thinking
+npm: "@feniix/pi-sequential-thinking"
+category: thinking
+description: Structured multi-step reasoning for complex problems
+capabilities:
+  - sequential-reasoning
+  - thought-recording
+  - step-by-step-analysis
+ideal_use_cases:
+  - scenario: Breaking down complex architectural decisions
+    why: Provides structured step-by-step analysis with confidence scoring
+    model_hint: mimo-v2.5-pro
+    recipe_hint: sequential-analysis
+  - scenario: Evaluating multiple design alternatives
+    why: Supports branching analysis paths with converge detection
+anti_patterns:
+  - scenario: Quick yes/no questions
+    why: Overhead of sequential steps is unnecessary for simple queries
+    alternative: direct-query
+dependencies:
+  - pi-toolchain
+thinking_level: high
+notes: Core reasoning tool — should be the foundation of any analysis chain
+version: "latest"

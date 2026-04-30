@@ -1,0 +1,49 @@
+# Valid complex recipe fixture — design pattern evaluation
+id: design-pattern-eval
+name: Design Pattern Evaluation
+description: Multi-step workflow for evaluating and selecting design patterns
+archetype: design
+complexity: complex
+model: mimo-v2.5-pro
+thinking: high
+boomerang: true
+steps:
+  - id: analyze-problem
+    name: Problem Analysis
+    tool: pi-sequential-thinking
+    prompt: |
+      Analyze the design problem:
+      1. Define the core problem and context
+      2. Identify the forces at play (constraints, requirements)
+      3. List 2-3 candidate patterns
+    thinking: high
+    chain_context: full
+  - id: evaluate-patterns
+    name: Pattern Evaluation
+    tool: pi-code-reasoning
+    prompt: |
+      Evaluate each candidate pattern:
+      1. For each pattern: pros, cons, complexity, maintainability
+      2. Score each on a 1-5 scale
+      3. Identify the clear winner and explain why
+    model: claude-sonnet-4-20250514
+    chain_context: summary
+  - id: document-decision
+    name: Document as ADR
+    tool: pi-specdocs
+    prompt: |
+      Create an Architecture Decision Record:
+      - Context: what problem needed solving
+      - Decision: which pattern was chosen and why
+      - Alternatives: what was considered and rejected
+      - Consequences: what this means for the codebase
+    chain_context: summary
+tags:
+  - design
+  - patterns
+  - architecture
+  - evaluation
+prerequisites:
+  - pi-sequential-thinking
+  - pi-code-reasoning
+  - pi-specdocs

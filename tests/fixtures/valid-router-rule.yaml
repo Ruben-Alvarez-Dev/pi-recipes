@@ -1,0 +1,11 @@
+# Valid router rule fixture
+id: thinking-request
+pattern: "(think|analyze|reason|evaluate|compare)"
+recipe: sequential-analysis
+priority: 1
+description: Matches analysis and reasoning requests
+conditions: []
+category_hint: thinking
+tags:
+  - thinking
+  - analysis

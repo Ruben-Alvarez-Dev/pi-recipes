@@ -1,0 +1,22 @@
+# Valid simple recipe fixture
+id: sequential-analysis
+name: Sequential Analysis
+description: Single-tool structured reasoning for analysis tasks
+archetype: analysis
+complexity: simple
+steps:
+  - id: think
+    name: Structured Reasoning
+    tool: pi-sequential-thinking
+    prompt: |
+      Analyze the following problem step by step:
+      1. Define the problem clearly
+      2. Identify constraints and assumptions
+      3. Explore possible solutions
+      4. Evaluate trade-offs
+      5. Recommend the best approach
+tags:
+  - analysis
+  - reasoning
+  - thinking
+prerequisites: []

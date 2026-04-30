@@ -1,0 +1,20 @@
+# Invalid tool fixture — missing required fields and bad values
+id: ""  # empty string — should fail
+name: Missing Category Tool
+npm: "not-a-real-package"
+category: imaginary  # not in enum
+description: ""  # empty — should fail
+capabilities: "not-an-array"  # wrong type
+ideal_use_cases:
+  - scenario: ""  # empty
+    why: ""  # empty
+    model_hint: "gpt-ancient-1"
+anti_patterns:
+  - scenario: "Using for everything"
+    why: "Bad idea"
+    alternative: ""  # empty — should fail
+dependencies:
+  - "nonexistent-tool-id"  # cross-ref fail (caught at validation time, not schema)
+thinking_level: ultra  # not in enum
+notes: "too short"
+version: ""
